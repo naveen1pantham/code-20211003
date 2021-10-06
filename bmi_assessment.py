@@ -27,15 +27,16 @@ def get_bmi(record):
     
     return record
 
-#Task 1
-result = list(map(get_bmi, bmi_list))
-print("List of dictionaries with new columns")
-print("*"*20)
-print("*"*20)
-print(result)
-print("*"*20)
-print("*"*20)
+if __name__ == '__main__':
+    #Task 1
+    result = list(map(get_bmi, bmi_list))
+    print("List of dictionaries with new columns")
+    print("*"*20)
+    print("*"*20)
+    print(result)
+    print("*"*20)
+    print("*"*20)
 
-#Task 2
-count_list = filter(lambda record: record['bmi_category']=='Overweight', result)
-print("Count of Overweight persons",len(count_list))
+    #Task 2
+    count_list = filter(lambda record: record['bmi_category']=='Overweight', result)
+    print("Count of Overweight persons",len(count_list))

@@ -12,6 +12,8 @@ health_risk = ['Malnutrition risk', 'Low risk', 'Enhanced risk', 'Medium risk', 
 bmi_category = ['Underweight', 'Normal weight', 'Overweight', 'Moderately obese', 'Severely obese', 'Very severely obese']
 
 def get_bmi(record): 
+    '''Calculating BMI by using given formula and adding new columns'''
+    
     bmi = round(record['WeightKg']/(record['HeightCm']*0.01)**2, 2)
     record['BMI'] = bmi
     
@@ -36,10 +38,15 @@ def get_bmi(record):
     
     return record
 
+#Task 1
 result = list(map(get_bmi, bmi_list))
 print("List of dictionaries with new columns")
+print("*"*20)
+print("*"*20)
 print(result)
+print("*"*20)
+print("*"*20)
 
+#Task 2
 count_list = filter(lambda record: record['bmi_category']=='Overweight', result)
-
-print('Count of Overweight persons',len(count_list))
+print("Count of Overweight persons",len(count_list))
